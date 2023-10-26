@@ -171,7 +171,7 @@ const Home = () => {
 				</div>
 			</div>
 			<div className='someFact'>
-				<div className='left_side' data-aos='slide-right'>
+				<div className='left_side' data-aos='fade-up'>
 					<div className='left_top'>
 						<h2>SOME FACTS</h2>
 						<span style={{fontSize: "21px", fontWeight: "bold"}}>
@@ -192,7 +192,7 @@ const Home = () => {
 						</span>
 					</div>
 				</div>
-				<div className='right_side' data-aos='slide-left'>
+				<div className='right_side' data-aos='fade-up'>
 					<div className='right_content'>
 						<FlutterDashRounded className='happyClient_icons' />
 						<h2>{happyClient}</h2>
@@ -223,7 +223,7 @@ const Home = () => {
 						trusted name in the industry
 					</p>
 				</div>
-				<div className='inq_right' data-aos='slide-left'>
+				<div className='inq_right' data-aos='fade-up'>
 					<div className='right_contents'>
 						<Person4Rounded className='inq_icon' />
 						<p>Tell Friend</p>
