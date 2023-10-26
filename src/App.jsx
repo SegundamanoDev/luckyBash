@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./App.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./Components/Home";
@@ -14,17 +14,19 @@ import Account from "./Components/Account";
 import Dashboard from "./Components/Dashboard";
 import Settings from "./Components/Settings";
 import UpdateTrack from "./Components/UpdateTrack";
-// import Aos from "aos";
-// import "aos/dist/aos.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const App = () => {
-	// useEffect(() => {
-	// 	Aos.init({
-	// 		once: true,
-	// 		duration: "2000",
-	// 		delay: "200",
-	// 	});
-	// }, []);
+	useEffect(() => {
+		Aos.init({
+			once: true,
+			duration: "1700",
+			delay: "200",
+			// offset: 100,
+			easing: "ease-in-out",
+		});
+	}, []);
 	return (
 		<div className='app_container'>
 			<BrowserRouter>

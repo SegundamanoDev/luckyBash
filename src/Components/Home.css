@@ -16,7 +16,7 @@
 }
 .banner {
 	background: linear-gradient(to right, #00000094, rgba(0, 0, 0, 0.205)),
-		url("./394826391_1468558207266577_7327770022850623295_n.jpg");
+		url("../assets/394826391_1468558207266577_7327770022850623295_n.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -85,6 +85,10 @@
 	display: flex;
 	align-items: center;
 	gap: 8px;
+}
+.banner_shipping_mode > span > p {
+	font-size: 21px;
+	font-weight: bold;
 }
 .trackNUmber_inp_container {
 	width: 100%;
@@ -312,7 +316,7 @@
 	color: white;
 }
 .key_h_text {
-	font-size: 1.3rem;
+	font-weight: bold;
 	color: var(--charcoal);
 }
 .key_right_desc1 {
@@ -346,13 +350,14 @@
 	justify-content: center;
 	width: 100%;
 	min-height: 50vh;
-	background-color: var(--orange);
+	background-color: var(--orange) !important;
 	color: white;
 	padding: 2rem;
 }
-.more_section > p {
-	font-size: 3rem;
+.more_section > h2 {
 	display: flex;
+	font-weight: 900;
+	font-size: 3rem;
 	flex-wrap: wrap;
 	width: 100%;
 }
@@ -365,7 +370,7 @@
 .more_section > .more_links > a {
 	font-size: 1.5rem;
 	position: relative;
-	color: lightgray;
+	color: black;
 }
 .more_section > .more_links > a:hover::after {
 	width: 100%;
@@ -377,6 +382,6 @@
 	height: 3px;
 	left: 0;
 	width: 0%;
-	background-color: lightgray;
+	background-color: black;
 	transition: all 0.3s;
 }

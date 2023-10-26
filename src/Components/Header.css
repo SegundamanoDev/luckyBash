@@ -37,6 +37,10 @@ header {
 	gap: 15px;
 	padding: 1rem;
 }
+a {
+	font-weight: 400;
+	font-size: 18px;
+}
 .header_wrapper > .menu {
 	width: 25px;
 	height: 20px;

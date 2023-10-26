@@ -54,7 +54,7 @@ const Home = () => {
 	return (
 		<div className='home_container'>
 			<div className='banner'>
-				<div className='banner_contents'>
+				<div className='banner_contents' data-aos='zoom-in'>
 					<p>
 						WELCOME TO <br /> Flawless Logistics <br /> Expect the best from us
 					</p>
@@ -69,7 +69,7 @@ const Home = () => {
 				</div>
 
 				<div className='banner_shipment_mode_container'>
-					<div className='banner_shipping_mode'>
+					<div className='banner_shipping_mode' data-aos='zoom-in'>
 						<span>
 							{" "}
 							<LocalShippingRounded className='banner_icons' />
@@ -77,7 +77,7 @@ const Home = () => {
 						</span>
 						<p>Secure and timely road Cargo Handling</p>
 					</div>
-					<div className='banner_shipping_mode'>
+					<div className='banner_shipping_mode' data-aos='zoom-in'>
 						<span>
 							{" "}
 							<FlightTakeoff className='banner_icons' />
@@ -85,7 +85,7 @@ const Home = () => {
 						</span>
 						<p>Secure and timely road Cargo Handling</p>
 					</div>
-					<div className='banner_shipping_mode'>
+					<div className='banner_shipping_mode' data-aos='zoom-in'>
 						<span>
 							{" "}
 							<DirectionsBoatRounded className='banner_icons' />
@@ -95,7 +95,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className='trackNUmber_inp_container'>
+			<div className='trackNUmber_inp_container' data-aos='zoom-in'>
 				<form onSubmit={submitTrackNumber}>
 					<input
 						type='text'
@@ -114,54 +114,54 @@ const Home = () => {
 					<span className='colution'>SOLUTION</span>
 				</h3>
 				<div className='company_services'>
-					<div className='services_details'>
+					<div className='services_details' data-aos='zoom-in'>
 						<LocalShippingRounded className='services_icons' />
-						<p className='services_heading'>COURIER</p>
+						<h2 className='services_heading'>COURIER</h2>
 						<p className='services_desc'>
 							For our same-day service, shipments received before 10:00am are
 							guaranteed to be delivered to selected airport cities
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details'>
+					<div className='services_details' data-aos='zoom-in'>
 						<LocalShippingRounded className='services_icons' />
-						<p className='services_heading'>LOGISTICS</p>
+						<h2 className='services_heading'>LOGISTICS</h2>
 						<p className='services_desc'>
 							Our Domestic Economy Service has been specifically designed to
 							suit both individual and corporate organizations
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details'>
+					<div className='services_details' data-aos='zoom-in'>
 						<ShoppingCartRounded className='services_icons' />
-						<p className='services_heading'>E- COMMERCE</p>
+						<h2 className='services_heading'>E- COMMERCE</h2>
 						<p className='services_desc'>
 							Our e-Commerce services can save you time and money in an
 							increasingly competitive and fast changing business landscape.
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details'>
+					<div className='services_details' data-aos='zoom-in'>
 						<DirectionsBoatRounded className='services_icons' />
-						<p className='services_heading'>INTERNATIONAL</p>
+						<h2 className='services_heading'>INTERNATIONAL</h2>
 						<p className='services_desc'>
 							Our international express service delivers time sensitive
 							documents and parcels nationwide to over 200 countries.
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details'>
+					<div className='services_details' data-aos='zoom-in'>
 						<OfflineBoltRounded className='services_icons' />
-						<p className='services_heading'>SPECIALIZED SOLUTIONS</p>
+						<h2 className='services_heading'>SPECIALIZED SOLUTIONS</h2>
 						<p className='services_desc'>
 							Our customized business solutions can either address your entire
 							supply chain or smaller elements within it such
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details'>
+					<div className='services_details' data-aos='zoom-in'>
 						<RecyclingRounded className='services_icons' />
-						<p className='services_heading'>CUSTOM SOLUTIONS</p>
+						<h2 className='services_heading'>CUSTOM SOLUTIONS</h2>
 						<p className='services_desc'>
 							Every business has different supply chain challenges; which means
 							that standard solutions are rarely effective.
@@ -171,10 +171,12 @@ const Home = () => {
 				</div>
 			</div>
 			<div className='someFact'>
-				<div className='left_side'>
+				<div className='left_side' data-aos='slide-right'>
 					<div className='left_top'>
 						<h2>SOME FACTS</h2>
-						<span>#1 Place To Manage All Of Your Shipments</span>
+						<span style={{fontSize: "21px", fontWeight: "bold"}}>
+							#1 Place To Manage All Of Your Shipments
+						</span>
 					</div>
 					<p>
 						At Flawless Logistics, we understand that time is of the essence in
@@ -190,7 +192,7 @@ const Home = () => {
 						</span>
 					</div>
 				</div>
-				<div className='right_side'>
+				<div className='right_side' data-aos='slide-left'>
 					<div className='right_content'>
 						<FlutterDashRounded className='happyClient_icons' />
 						<h2>{happyClient}</h2>
@@ -209,10 +211,10 @@ const Home = () => {
 				</div>
 			</div>
 			<div className='inquiry_sections'>
-				<div className='inq_left'>
-					<p className='inq_fst_p'>
+				<div className='inq_left' data-aos='fade-up'>
+					<h2 className='inq_fst_p'>
 						Unbeatable Tracking and Transport Services
-					</p>
+					</h2>
 					<p>
 						At flawless logistics we take great price in offering unbeatable
 						tracking and transport services that are designed to meet all your
@@ -221,7 +223,7 @@ const Home = () => {
 						trusted name in the industry
 					</p>
 				</div>
-				<div className='inq_right'>
+				<div className='inq_right' data-aos='slide-left'>
 					<div className='right_contents'>
 						<Person4Rounded className='inq_icon' />
 						<p>Tell Friend</p>
@@ -238,19 +240,21 @@ const Home = () => {
 			</div>
 			<div className='keyFeatures_section'>
 				<div className='inquiry_left'>
-					<p className='key_f_text'>KEY FEATURES</p>
-					<div className='group_items'>
+					<h2 className='key_f_text' data-aos='zoom-in'>
+						KEY FEATURES
+					</h2>
+					<div className='group_items' data-aos='zoom-in'>
 						<CheckCircleRounded className='check_icon' />
-						<p className='key_h_text'>100% Safe Delivery</p>
+						<h2 className='key_h_text'>100% Safe Delivery</h2>
 						<p>
 							We pride on being the only indigenous logistics provider that has
 							the vision, capacity and world class client service culture that
 							can rival any international brand.
 						</p>
 					</div>
-					<div className='group_items'>
+					<div className='group_items' data-aos='zoom-in'>
 						<CheckCircleRounded className='check_icon' />
-						<p className='key_h_text'>Fast & On Time</p>
+						<h2 className='key_h_text'>Fast & On Time</h2>
 						<p>
 							We understand that most times, the costs for delays in logistics
 							far outweigh the cost of the transaction itself. Therefore, we
@@ -260,17 +264,19 @@ const Home = () => {
 					</div>
 				</div>
 				<div className='inquiry_right'>
-					<p className='key_about_text'>ABOUT US</p>
+					<h2 className='key_about_text' data-aos='zoom-in'>
+						ABOUT US
+					</h2>
 					<div className='right_wrapper'>
-						<p className='key_right_desc1'>
+						<p className='key_right_desc1' data-aos='zoom-in'>
 							Between the point of departure and destination there is FLAWLESS
 							DELIVERY
 						</p>
-						<p className='key_right_desc2'>
+						<p className='key_right_desc2' data-aos='zoom-in'>
 							Flawless is a provider of end-to-end logistics solutions to
 							businesses and institutions across the World.
 						</p>
-						<p className='key_right_desc3'>
+						<p className='key_right_desc3' data-aos='zoom-in'>
 							when you need a fast and reliable logistics service providers we
 							are present. Flawless has been in the distribution and logistics
 							business since 2009.
@@ -278,10 +284,10 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className='more_section'>
-				<p>
+			<div className='more_section' data-aos='zoom-in'>
+				<h2>
 					Looking for more? <br /> Here are a few places to explore.
-				</p>
+				</h2>
 				<div className='more_links'>
 					<Link to='/about'>About Us</Link>
 					<Link to='/international'>Import Service</Link>
