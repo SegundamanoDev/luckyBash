@@ -1,0 +1,65 @@
+:root {
+	--charcoal: #36454f;
+	--orange: #ff8303;
+}
+.footer_container {
+	background-color: black;
+	color: white;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	justify-items: center;
+	width: 100%;
+	gap: 10px;
+}
+.footer_container > .footer_lists {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+	padding: 1rem;
+}
+.footer_container > .footer_lists > .logo > img {
+	width: 100px;
+	height: 60px;
+	object-fit: cover;
+	object-position: center;
+}
+.footer_container > .footer_lists > .logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer_container > .footer_lists:nth-child(1) > p {
+	line-height: 1.8;
+	margin-top: 1rem;
+	font-size: 17px;
+	font-weight: 400;
+}
+.locations_icon {
+	width: 2rem !important;
+	height: 2rem !important;
+}
+.footer_lists > span {
+	display: flex;
+	align-items: center;
+}
+.readMore_link {
+	width: fit-content;
+	background-color: var(--orange);
+	padding: 1rem 1.5rem;
+	border-radius: 1rem;
+}
+.address_span {
+	display: flex;
+	gap: 10px;
+}
+.call_span {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.call_span > span {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}

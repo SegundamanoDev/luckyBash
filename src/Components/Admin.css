@@ -1,0 +1,38 @@
+.admin {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #add8e6;
+	justify-content: center;
+	margin-top: 80px;
+}
+.admin > .header {
+	display: flex;
+	flex-direction: column;
+	width: 35%;
+	position: fixed;
+	left: 0;
+	background-color: white;
+	min-height: 100vh;
+	padding-top: 2rem;
+	padding-left: 7px;
+	overflow: hidden;
+	gap: 40px;
+}
+.admin_contents {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+	margin-left: 35%;
+	height: 100%;
+	align-content: center;
+	align-items: center;
+}
+.admin > .header > span {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.admin > .header > span > a {
+	color: black;
+}
