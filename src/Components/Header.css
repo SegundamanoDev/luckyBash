@@ -128,6 +128,7 @@ nav > .logo > img {
 		display: block !important;
 		width: 100%;
 		height: 60px;
+		background-color: transparent;
 	}
 	.header_wrapper > .logo > img {
 		width: 100%;
