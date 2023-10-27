@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from "react";
 import "./Header.css";
 import {NavLink} from "react-router-dom";
-import LogoImg from "../assets/logo.jpg";
+import LogoImg from "../assets/black-logo.jpg";
 
 const Header = () => {
 	const [click, setClick] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
 					onClick={closeNav}></div>
 				<nav className={click ? "mobileNav" : null}>
 					<div className='logo'>
-						<h3>Flawless</h3>
+						<img src={LogoImg} alt='logo' />
 					</div>
 					<ul>
 						<li onClick={closeNav}>

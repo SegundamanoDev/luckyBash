@@ -16,15 +16,17 @@ import Settings from "./Components/Settings";
 import UpdateTrack from "./Components/UpdateTrack";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import About from "./Components/About";
+import Service from "./Components/Service";
+import Contact from "./Components/Contact";
 
 const App = () => {
 	useEffect(() => {
 		Aos.init({
 			once: true,
-			duration: "1700",
-			delay: "200",
-			// offset: 100,
-			easing: "ease-in-out",
+			duration: "1500",
+			delay: "100",
+			easing: "ease",
 		});
 	}, []);
 	return (
@@ -34,6 +36,9 @@ const App = () => {
 				<Header />
 				<Routes>
 					<Route exact path='/' element={<Home />} />
+					<Route path='/about' element={<About />} />
+					<Route path='/service' element={<Service />} />
+					<Route path='/contact' element={<Contact />} />
 					<Route path='/register' element={<Register />} />
 					<Route path='/login' element={<Login />} />
 					<Route path='/admin' element={<Admin />}>

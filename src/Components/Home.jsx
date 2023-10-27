@@ -55,9 +55,9 @@ const Home = () => {
 		<div className='home_container'>
 			<div className='banner'>
 				<div className='banner_contents' data-aos='zoom-in'>
-					<p>
-						WELCOME TO <br /> Flawless Logistics <br /> Expect the best from us
-					</p>
+					<h2>
+						WELCOME TO <br /> FLAWLESS LOGISTICS <br /> EXPECT THE BEST FROM US
+					</h2>
 					<div className='buttons'>
 						<Link className='banner_signup' to='/signup'>
 							Register
@@ -69,7 +69,7 @@ const Home = () => {
 				</div>
 
 				<div className='banner_shipment_mode_container'>
-					<div className='banner_shipping_mode' data-aos='zoom-in'>
+					<div className='banner_shipping_mode' data-aos='fade-up'>
 						<span>
 							{" "}
 							<LocalShippingRounded className='banner_icons' />
@@ -77,7 +77,7 @@ const Home = () => {
 						</span>
 						<p>Secure and timely road Cargo Handling</p>
 					</div>
-					<div className='banner_shipping_mode' data-aos='zoom-in'>
+					<div className='banner_shipping_mode' data-aos='fade-up'>
 						<span>
 							{" "}
 							<FlightTakeoff className='banner_icons' />
@@ -85,7 +85,7 @@ const Home = () => {
 						</span>
 						<p>Secure and timely road Cargo Handling</p>
 					</div>
-					<div className='banner_shipping_mode' data-aos='zoom-in'>
+					<div className='banner_shipping_mode' data-aos='fade-up'>
 						<span>
 							{" "}
 							<DirectionsBoatRounded className='banner_icons' />
@@ -95,7 +95,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className='trackNUmber_inp_container' data-aos='zoom-in'>
+			<div className='trackNUmber_inp_container' data-aos='fade-up'>
 				<form onSubmit={submitTrackNumber}>
 					<input
 						type='text'
@@ -114,7 +114,7 @@ const Home = () => {
 					<span className='colution'>SOLUTION</span>
 				</h3>
 				<div className='company_services'>
-					<div className='services_details' data-aos='zoom-in'>
+					<div className='services_details' data-aos='fade-up'>
 						<LocalShippingRounded className='services_icons' />
 						<h2 className='services_heading'>COURIER</h2>
 						<p className='services_desc'>
@@ -123,7 +123,7 @@ const Home = () => {
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details' data-aos='zoom-in'>
+					<div className='services_details' data-aos='fade-up'>
 						<LocalShippingRounded className='services_icons' />
 						<h2 className='services_heading'>LOGISTICS</h2>
 						<p className='services_desc'>
@@ -132,7 +132,7 @@ const Home = () => {
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details' data-aos='zoom-in'>
+					<div className='services_details' data-aos='fade-up'>
 						<ShoppingCartRounded className='services_icons' />
 						<h2 className='services_heading'>E- COMMERCE</h2>
 						<p className='services_desc'>
@@ -141,7 +141,7 @@ const Home = () => {
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details' data-aos='zoom-in'>
+					<div className='services_details' data-aos='fade-up'>
 						<DirectionsBoatRounded className='services_icons' />
 						<h2 className='services_heading'>INTERNATIONAL</h2>
 						<p className='services_desc'>
@@ -150,7 +150,7 @@ const Home = () => {
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details' data-aos='zoom-in'>
+					<div className='services_details' data-aos='fade-up'>
 						<OfflineBoltRounded className='services_icons' />
 						<h2 className='services_heading'>SPECIALIZED SOLUTIONS</h2>
 						<p className='services_desc'>
@@ -159,7 +159,7 @@ const Home = () => {
 						</p>
 						<Link to=''>READ MORE</Link>
 					</div>
-					<div className='services_details' data-aos='zoom-in'>
+					<div className='services_details' data-aos='fade-up'>
 						<RecyclingRounded className='services_icons' />
 						<h2 className='services_heading'>CUSTOM SOLUTIONS</h2>
 						<p className='services_desc'>
@@ -240,10 +240,10 @@ const Home = () => {
 			</div>
 			<div className='keyFeatures_section'>
 				<div className='inquiry_left'>
-					<h2 className='key_f_text' data-aos='zoom-in'>
+					<h2 className='key_f_text' data-aos='fade-up'>
 						KEY FEATURES
 					</h2>
-					<div className='group_items' data-aos='zoom-in'>
+					<div className='group_items' data-aos='fade-up'>
 						<CheckCircleRounded className='check_icon' />
 						<h2 className='key_h_text'>100% Safe Delivery</h2>
 						<p>
@@ -252,7 +252,7 @@ const Home = () => {
 							can rival any international brand.
 						</p>
 					</div>
-					<div className='group_items' data-aos='zoom-in'>
+					<div className='group_items' data-aos='fade-up'>
 						<CheckCircleRounded className='check_icon' />
 						<h2 className='key_h_text'>Fast & On Time</h2>
 						<p>
@@ -264,19 +264,19 @@ const Home = () => {
 					</div>
 				</div>
 				<div className='inquiry_right'>
-					<h2 className='key_about_text' data-aos='zoom-in'>
+					<h2 className='key_about_text' data-aos='fade-up'>
 						ABOUT US
 					</h2>
 					<div className='right_wrapper'>
-						<p className='key_right_desc1' data-aos='zoom-in'>
+						<p className='key_right_desc1' data-aos='fade-up'>
 							Between the point of departure and destination there is FLAWLESS
 							DELIVERY
 						</p>
-						<p className='key_right_desc2' data-aos='zoom-in'>
+						<p className='key_right_desc2' data-aos='fade-up'>
 							Flawless is a provider of end-to-end logistics solutions to
 							businesses and institutions across the World.
 						</p>
-						<p className='key_right_desc3' data-aos='zoom-in'>
+						<p className='key_right_desc3' data-aos='fade-up'>
 							when you need a fast and reliable logistics service providers we
 							are present. Flawless has been in the distribution and logistics
 							business since 2009.
@@ -284,7 +284,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className='more_section' data-aos='zoom-in'>
+			<div className='more_section' data-aos='fade-up'>
 				<h2>
 					Looking for more? <br /> Here are a few places to explore.
 				</h2>

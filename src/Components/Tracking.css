@@ -42,6 +42,8 @@ select {
 	padding: 1rem;
 	width: 100%;
 	outline: none;
+	font-size: 16px;
+	text-size-adjust: 100%;
 	border: none;
 	border-bottom: 0.5px solid rgba(0, 0, 0, 0.5) !important;
 }
