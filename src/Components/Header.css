@@ -131,10 +131,16 @@ nav > .logo > img {
 		background-color: transparent;
 	}
 	.header_wrapper > .logo > img {
-		width: 100px;
-		height: fit-content;
+		width: 100%;
+		height: 100px;
 		object-fit: cover;
 		object-position: center;
 		background-color: transparent !important;
+	}
+	.header_wrapper > .logo {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 70%;
 	}
 }
