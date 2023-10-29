@@ -52,12 +52,12 @@
 	align-items: center;
 }
 .footer_lists > span > a {
-	font-weight: 400;
-	font-size: 18px;
+	font-size: 17px;
+	font-weight: 700;
 }
 .readMore_link {
 	width: fit-content;
-	background-color: var(--orange);
+	background-color: #ff0052;
 	padding: 1rem 1.5rem;
 	border-radius: 0.5rem;
 }

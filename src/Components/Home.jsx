@@ -121,7 +121,7 @@ const Home = () => {
 							For our same-day service, shipments received before 10:00am are
 							guaranteed to be delivered to selected airport cities
 						</p>
-						<Link to=''>READ MORE</Link>
+						<Link to='/services/courier'>READ MORE</Link>
 					</div>
 					<div className='services_details' data-aos='fade-up'>
 						<LocalShippingRounded className='services_icons' />
@@ -130,7 +130,7 @@ const Home = () => {
 							Our Domestic Economy Service has been specifically designed to
 							suit both individual and corporate organizations
 						</p>
-						<Link to=''>READ MORE</Link>
+						<Link to='/services/logistics'>READ MORE</Link>
 					</div>
 					<div className='services_details' data-aos='fade-up'>
 						<ShoppingCartRounded className='services_icons' />
@@ -139,7 +139,7 @@ const Home = () => {
 							Our e-Commerce services can save you time and money in an
 							increasingly competitive and fast changing business landscape.
 						</p>
-						<Link to=''>READ MORE</Link>
+						<Link to='/services/e-commerce'>READ MORE</Link>
 					</div>
 					<div className='services_details' data-aos='fade-up'>
 						<DirectionsBoatRounded className='services_icons' />
@@ -148,7 +148,7 @@ const Home = () => {
 							Our international express service delivers time sensitive
 							documents and parcels nationwide to over 200 countries.
 						</p>
-						<Link to=''>READ MORE</Link>
+						<Link to='/services/international'>READ MORE</Link>
 					</div>
 					<div className='services_details' data-aos='fade-up'>
 						<OfflineBoltRounded className='services_icons' />
@@ -157,7 +157,7 @@ const Home = () => {
 							Our customized business solutions can either address your entire
 							supply chain or smaller elements within it such
 						</p>
-						<Link to=''>READ MORE</Link>
+						<Link to='/services/specialised-solution'>READ MORE</Link>
 					</div>
 					<div className='services_details' data-aos='fade-up'>
 						<RecyclingRounded className='services_icons' />
@@ -166,7 +166,7 @@ const Home = () => {
 							Every business has different supply chain challenges; which means
 							that standard solutions are rarely effective.
 						</p>
-						<Link to=''>READ MORE</Link>
+						<Link to='/services/custom-solution'>READ MORE</Link>
 					</div>
 				</div>
 			</div>

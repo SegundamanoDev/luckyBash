@@ -1,61 +1,169 @@
-import React from "react";
-import {useState} from "react";
+import React, {useState} from "react";
 import "./Header.css";
 import {NavLink} from "react-router-dom";
-import LogoImg from "../assets/black-logo.jpg";
+// import whiteLogo from "../assets/whitelogo.jpg";
 
 const Header = () => {
 	const [click, setClick] = useState(false);
+	const [show, setShow] = useState(false);
+	const [sideDropDown, setSideDropDown] = useState(false);
 
-	const handleClick = () => setClick(!click);
-	const closeNav = () => setClick(false);
+	const handleSideDrop = () => {
+		setSideDropDown(!sideDropDown);
+	};
+
+	const showDrop = () => {
+		setShow(true);
+	};
+	const hideDrop = () => {
+		setShow(false);
+	};
+
+	const handleClick = () => {
+		setClick(!click);
+		setSideDropDown(false);
+	};
 	return (
-		<header className='header_container'>
+		<div className='header_container'>
 			<div className='header_wrapper'>
-				<div className='logo'>
-					<img src={LogoImg} alt='logo' />
-				</div>
 				<div
-					className={click ? "nav_layOut close" : "nav_layOut"}
-					onClick={closeNav}></div>
-				<nav className={click ? "mobileNav" : null}>
-					<div className='logo'>
-						<img src={LogoImg} alt='logo' />
-					</div>
+					className={click ? "overlay openOverlay" : "overlay"}
+					onClick={handleClick}></div>
+				<div className='logo'>
+					{/* <img src={whiteLogo} alt='logo' /> */}
+					<h2>FLAWLESS</h2>
+				</div>
+				<nav>
 					<ul>
-						<li onClick={closeNav}>
+						<li>
 							<NavLink to='/'>Home</NavLink>
 						</li>
-						<li onClick={closeNav}>
+						<li>
 							<NavLink to='/about'>About Us</NavLink>
 						</li>
-						<li onClick={closeNav}>
-							<NavLink to='/service'>Services</NavLink>
-						</li>
-						<li onClick={closeNav}>
+						<li>
 							<NavLink to='/contact'>Contact Us</NavLink>
 						</li>
-						<li onClick={closeNav}>
-							<NavLink to='/login'>Sign In</NavLink>
+						<li
+							className='dropDown_parent'
+							onMouseEnter={showDrop}
+							onMouseLeave={hideDrop}>
+							<NavLink to='/services'>Service</NavLink>
+							<div
+								className={
+									show ? "dropDown_contents showContents" : "dropDown_contents"
+								}>
+								<NavLink to='/services/courier' onClick={hideDrop}>
+									Courier
+								</NavLink>
+								<NavLink to='/services/logistics' onClick={hideDrop}>
+									Logistics
+								</NavLink>
+								<NavLink to='/services/e-commerce' onClick={hideDrop}>
+									E- Commerce
+								</NavLink>
+								<NavLink to='/services/international' onClick={hideDrop}>
+									International
+								</NavLink>
+								<NavLink to='/services/specialised-solution' onClick={hideDrop}>
+									Specialized Solution
+								</NavLink>
+								<NavLink to='/services/custom-solution' onClick={hideDrop}>
+									Custom Solution
+								</NavLink>
+							</div>
 						</li>
-						<li onClick={closeNav}>
+						<li>
+							<NavLink to='/carrier'>Carrier</NavLink>
+						</li>
+						<li>
 							<NavLink to='/register'>Sign Up</NavLink>
 						</li>
-						<li onClick={closeNav}>
-							<NavLink to='/signout'>Sign Out</NavLink>
+						<li>
+							<NavLink to='/login'>Sign In</NavLink>
 						</li>
-						<li onClick={closeNav}>
+						<li>
 							<NavLink to='/admin'>Admin</NavLink>
 						</li>
 					</ul>
 				</nav>
-				<div className='menu' onClick={handleClick}>
+				<div className='menuButton' onClick={handleClick}>
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
+				{/* mini nav */}
+
+				<div className={click ? "miniNav openNav" : "miniNav"}>
+					<ul>
+						<li>
+							<NavLink to='/' onClick={handleClick}>
+								Home
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/about' onClick={handleClick}>
+								About Us
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/contact' onClick={handleClick}>
+								Contact Us
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/services' onClick={handleSideDrop}>
+								Services
+							</NavLink>
+							{sideDropDown && (
+								<div className='sideDrop'>
+									<NavLink to='/services/courier' onClick={handleClick}>
+										Courier
+									</NavLink>
+									<NavLink to='/services/logistics' onClick={handleClick}>
+										Logistics
+									</NavLink>
+									<NavLink to='/services/e-commerce' onClick={handleClick}>
+										E- Commerce
+									</NavLink>
+									<NavLink to='/services/international' onClick={handleClick}>
+										International
+									</NavLink>
+									<NavLink
+										to='/services/specialised-solution'
+										onClick={handleClick}>
+										Specialized Solution
+									</NavLink>
+									<NavLink to='/services/custom-solution' onClick={handleClick}>
+										Custom Solution
+									</NavLink>
+								</div>
+							)}
+						</li>
+						<li>
+							<NavLink to='/carrier' onClick={handleClick}>
+								Carrier
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/register' onClick={handleClick}>
+								Sign Up
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/login' onClick={handleClick}>
+								Sign In
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/admin' onClick={handleClick}>
+								Admin
+							</NavLink>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</header>
+		</div>
 	);
 };
 

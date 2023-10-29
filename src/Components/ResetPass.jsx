@@ -9,7 +9,7 @@ const ResetPass = () => {
 		e.preventDefault();
 	};
 	return (
-		<div className='container'>
+		<div className='container' data-aos='zoom-in'>
 			<form onSubmit={handleSubmit}>
 				<h2>Reset Password</h2>
 				<div className='form_input_field'>

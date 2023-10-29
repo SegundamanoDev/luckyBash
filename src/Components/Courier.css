@@ -1,0 +1,66 @@
+.courier_container > .courier_top {
+	background: linear-gradient(45deg, cyan, blue);
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	gap: 1rem;
+	padding: 7rem 0rem;
+	margin-top: 95px;
+}
+.courier_container > .left_wrapper > .left_top {
+	display: grid;
+	gap: 2rem;
+}
+.courier_container > .left_wrapper > .left_top > .discssn {
+	display: grid;
+	gap: 2rem;
+}
+
+.courier_container > .left_wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	width: 100%;
+	height: fit-content;
+	padding: 2rem;
+}
+.top_right > .card {
+	display: grid;
+	justify-items: center;
+	height: 100%;
+	box-shadow: 0px 0px 3px 0px;
+	align-items: center;
+}
+.top_right > .card > ul {
+	display: grid;
+	gap: 1rem;
+}
+.top_right > .card > ul > li > a {
+	color: black;
+}
+.courier_container > .bottom > .cards > ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	text-align: center;
+	padding: 2rem;
+}
+.courier_container > .bottom > .cards {
+	padding-top: 5rem;
+	background-color: lightgray;
+}
+.courier_container > .bottom > .cards > ul > li {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	align-items: center;
+	box-shadow: 0px 0px 3px 0px;
+	background-color: white;
+}
+.courier_container > .bottom > .cards > ul > li > .icon {
+	color: cyan;
+	width: 2rem !important;
+	height: 2rem !important;
+}

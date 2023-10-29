@@ -1,0 +1,79 @@
+:root {
+	--charcoal: #36454f;
+	--orange: #ff8303;
+	--pinkred: #ff0052;
+}
+.service_container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: fit-content;
+	margin-top: 95px;
+}
+.service_container > .service_top {
+	background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+		url("../assets/395033664_6512804182156715_8203702592223443335_n.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	gap: 1rem;
+	padding: 7rem 0rem;
+}
+.service_middle {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	color: black;
+	width: 100%;
+	height: fit-content;
+	background: white;
+}
+.service_middle > ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	margin-top: 20px;
+}
+.service_middle > ul > li {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	box-shadow: 0px 0px 2px 0px;
+	padding: 1rem;
+}
+.service_middle > ul > li > a {
+	color: gray;
+}
+.service_middle > ul > li > .first_sect_icon {
+	color: var(--orange);
+	width: 5rem;
+	height: 5rem;
+}
+.service_quote {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: fit-content;
+}
+.service_quote > .top {
+	background: var(--orange);
+	padding: 5rem 3rem;
+	color: white;
+	display: flex;
+	font-weight: bold;
+	font-size: 1.5rem;
+	flex-direction: column;
+	gap: 2rem;
+}
+.service_quote > .top > a {
+	display: inline-block;
+	height: fit-content;
+	width: fit-content;
+	padding: 0.6rem;
+	border: 1px solid white;
+}

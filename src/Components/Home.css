@@ -7,7 +7,7 @@
 	background-color: lightgray;
 	height: fit-content;
 	width: 100%;
-	margin-top: 100px;
+	margin-top: 60px;
 }
 .home_container > div {
 	margin-bottom: 1rem;
@@ -53,11 +53,15 @@
 	background-color: #ff0052;
 	padding: 5px 15px;
 	border-radius: 10px;
+	font-size: 14px;
+	font-weight: bold;
 }
 .banner_contents > .buttons > .banner_signin {
 	background-color: #ff0052;
 	padding: 5px 15px;
 	border-radius: 10px;
+	font-size: 14px;
+	font-weight: bold;
 }
 .banner_shipment_mode_container {
 	display: grid;
@@ -391,5 +395,11 @@
 	.banner_contents > .buttons > a {
 		font-size: 20px;
 		font-weight: 400;
+	}
+	.home_container {
+		color: darkgray;
+		background-color: lightgray;
+		height: fit-content;
+		width: 100%;
 	}
 }

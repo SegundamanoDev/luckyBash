@@ -1,47 +1,50 @@
 import React from "react";
-import "./Courier.css";
-import {Link} from "react-router-dom";
+import "./Commerce.css";
 import {CheckCircleOutlineRounded} from "@mui/icons-material";
+import {Link} from "react-router-dom";
 
-const Courier = () => {
+const Commerce = () => {
 	return (
-		<div className='courier_container'>
-			<div className='courier_top' data-aos='fade-up'>
+		<div className='commerce_container'>
+			<div className='commerce_top' data-aos='zoom-in'>
 				<h2>WHO WE ARE</h2>
-				<h2>COURIER</h2>
+				<h2>E-COMMERCE</h2>
 			</div>
 			<div className='left_wrapper'>
 				<div className='left_top'>
 					<div className='group_item' data-aos='fade-up'>
-						<h2>Courier Service</h2>
-						<h2>Integrated transport solutions.</h2>
+						<h2>E-Commerce Services</h2>
+						<h3>e platforms all across the country.</h3>
 					</div>
-
 					<h3 data-aos='fade-up'>
-						Trust Our Tires everything runs like clockwork. your business run
-						smoothly when your logistics runs smoothly
+						Our e-Commerce services can save you time and money in an
+						increasingly competitive and fast changing business landscape.
 					</h3>
 
 					<div className='discssn' data-aos='fade-up'>
-						<h2>Same Day Delivery:</h2>
-						<p>
-							For our same-day service, Shipment received before 10:00am and
-							guarantee to be delivered to selected airport cities across
-							Nigeria before close of business on the same day.
+						<p data-aos='fade-up'>
+							Our vast investment in technology and integration with the whole
+							e-commerce supply chain makes us a reliable partner for online
+							businesses. Furthermore, we are a major delivery and logistics
+							support provider to over 500 stand-alone online merchants and
+							major E-commerce platforms all across the country. Our service
+							range includes the following:
 						</p>
-					</div>
 
-					<div className='discssn' data-aos='fade-up'>
-						<h2>Domestic Express Service:</h2>
-						<p>
-							Our domestic express service delivers time sensitive documents and
-							parcels nation wild, transit is usually between 24 to 72 hours for
-							consignments up to 500kg policies for all types of shipments
-						</p>
+						<div className='discssn_II'>
+							<h3 data-aos='fade-up'>Last Mile Deliveries</h3>
+							<h3 data-aos='fade-up'>Payment on Delivery</h3>
+							<h3 data-aos='fade-up'>
+								Managed (Manage) Drop-off and Collection services
+							</h3>
+							<h3 data-aos='fade-up'>Warehousing, fulfillment services</h3>
+							<h3 data-aos='fade-up'>Reverse Logistics & Returns</h3>
+							<h3 data-aos='fade-up'>Real-Time Statuses</h3>
+						</div>
 					</div>
 				</div>
-				<div className='top_right' data-aos='fade-up'>
-					<div className='card'>
+				<div className='top_right'>
+					<div className='card' data-aos='fade-up'>
 						<ul>
 							<h2>SERVICES</h2>
 							<li>
@@ -105,4 +108,4 @@ const Courier = () => {
 	);
 };
 
-export default Courier;
+export default Commerce;

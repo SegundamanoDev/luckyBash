@@ -19,6 +19,12 @@ import "aos/dist/aos.css";
 import About from "./Components/About";
 import Service from "./Components/Service";
 import Contact from "./Components/Contact";
+import Courier from "./Components/Courier";
+import Logistics from "./Components/Logistics";
+import Commerce from "./Components/Commerce";
+import International from "./Components/International";
+import Specialised from "./Components/Specialised";
+import Custom from "./Components/Custom";
 
 const App = () => {
 	useEffect(() => {
@@ -37,8 +43,17 @@ const App = () => {
 				<Routes>
 					<Route exact path='/' element={<Home />} />
 					<Route path='/about' element={<About />} />
-					<Route path='/service' element={<Service />} />
+					<Route path='/services' element={<Service />} />
 					<Route path='/contact' element={<Contact />} />
+					<Route path='/services/courier' element={<Courier />} />
+					<Route path='/services/logistics' element={<Logistics />} />
+					<Route path='/services/e-commerce' element={<Commerce />} />
+					<Route path='/services/international' element={<International />} />
+					<Route
+						path='/services/specialised-solution'
+						element={<Specialised />}
+					/>
+					<Route path='/services/custom-solution' element={<Custom />} />
 					<Route path='/register' element={<Register />} />
 					<Route path='/login' element={<Login />} />
 					<Route path='/admin' element={<Admin />}>

@@ -12,7 +12,7 @@ const Login = () => {
 	};
 
 	return (
-		<div className='container'>
+		<div className='container' data-aos='zoom-in'>
 			<form onSubmit={handleSubmit}>
 				<h2>Login</h2>
 				<div className='form_input_field'>

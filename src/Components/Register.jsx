@@ -1,9 +1,13 @@
 import React from "react";
 import {useState} from "react";
 import "./Register.css";
+import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import {signUp} from "../Redux/slices/userSlice";
 
 const Register = () => {
+	const dispatch = useDispatch();
+
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
@@ -12,6 +16,15 @@ const Register = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		dispatch(
+			signUp({
+				firstName,
+				lastName,
+				email,
+				password,
+				image: photo,
+			})
+		);
 	};
 
 	const handleFileChange = (e) => {
@@ -30,7 +43,7 @@ const Register = () => {
 		};
 	};
 	return (
-		<div className='container'>
+		<div className='container' data-aos='zoom-in'>
 			<form onSubmit={handleSubmit}>
 				<h2>Register</h2>
 				<div className='form_input_field'>
