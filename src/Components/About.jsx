@@ -14,8 +14,8 @@ const About = () => {
 				</h2>
 				<h3 data-aos='fade-up'>
 					FLAWLESS is a provider of end-to-end logistics solutions to businesses
-					and institutions Across the Globe. We are currently among the top 5
-					logistics provider in the world, operating from over 50 Countries
+					and institutions Across the Globe. We are currently among one of the
+					best logistics provider, operating from over 50 Countries
 				</h3>
 				<div className='cards'>
 					<ul>

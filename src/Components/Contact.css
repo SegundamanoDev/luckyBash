@@ -10,9 +10,11 @@
 	width: 100%;
 	justify-content: center;
 	margin-top: 95px;
+	background-color: var(--background);
+	color: var(--color);
 }
 .contact_container > .contact_top {
-	background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+	background: linear-gradient(rgba(33, 33, 33, 0.6), transparent),
 		url("../assets/395035351_699204061893052_5821945860888742356_n.jpg");
 	background-position: center;
 	background-repeat: no-repeat;

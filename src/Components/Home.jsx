@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "./Home.css";
 import {
 	LocalShippingRounded,
@@ -15,12 +15,28 @@ import {
 	FlutterDashRounded,
 	GradeRounded,
 } from "@mui/icons-material";
+import {useDispatch, useSelector} from "react-redux";
+import {FindOrder} from "../Redux/slices/orderSlice";
+import MapComponent from "./MapComponent";
 
 const Home = () => {
 	const [happyClient, setHappyClient] = useState(0);
 	const [customerReview, setCustomerReview] = useState(0);
 	const [completeShipping, setCompleteShipping] = useState(0);
 	const [trackNumberId, setTrackNumberId] = useState("");
+
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const submitTrackNumber = async (e) => {
+		e.preventDefault();
+		setTrackNumberId("");
+		const result = await dispatch(FindOrder(trackNumberId));
+
+		if (result) {
+			navigate("/get-my-order");
+		}
+	};
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -48,9 +64,7 @@ const Home = () => {
 		}, 70);
 		return () => clearInterval(interval);
 	}, [customerReview]);
-	const submitTrackNumber = (e) => {
-		e.preventDefault();
-	};
+
 	return (
 		<div className='home_container'>
 			<div className='banner'>
@@ -59,10 +73,10 @@ const Home = () => {
 						WELCOME TO <br /> FLAWLESS LOGISTICS <br /> EXPECT THE BEST FROM US
 					</h2>
 					<div className='buttons'>
-						<Link className='banner_signup' to='/signup'>
+						<Link className='banner_signup' to='/register'>
 							Register
 						</Link>
-						<Link className='banner_signin' to='/signin'>
+						<Link className='banner_signin' to='/login'>
 							Login
 						</Link>
 					</div>
@@ -83,7 +97,7 @@ const Home = () => {
 							<FlightTakeoff className='banner_icons' />
 							<p>Air Freight</p>
 						</span>
-						<p>Secure and timely road Cargo Handling</p>
+						<p>Secure and timely Air Cargo Handling</p>
 					</div>
 					<div className='banner_shipping_mode' data-aos='fade-up'>
 						<span>
@@ -95,21 +109,27 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className='trackNUmber_inp_container' data-aos='fade-up'>
-				<form onSubmit={submitTrackNumber}>
+
+			<div className='trackNUmber_inp_container' data-aos='zoom-in'>
+				<h2>
+					Track & <span>Trace Shipment</span>
+				</h2>
+				<p>Enter Tracking Number Here</p>
+				<form>
 					<input
 						type='text'
-						name='track'
-						id='track'
 						placeholder='Enter your tracking number...'
 						value={trackNumberId}
 						onChange={(e) => setTrackNumberId(e.target.value)}
 					/>
-					<button type='submit'>Track</button>
+					<button type='submit' onClick={submitTrackNumber}>
+						Track
+					</button>
 				</form>
 			</div>
+
 			<div className='company_service_container'>
-				<h3 className='company_h3'>
+				<h3 className='company_h3' data-aos='fade-up'>
 					You have a need, we <br /> have the{" "}
 					<span className='colution'>SOLUTION</span>
 				</h3>
@@ -188,7 +208,7 @@ const Home = () => {
 						<MailRounded />
 						<span>
 							<p>Email for any inquiry</p>
-							<p>flawless@gmail.com</p>
+							<strong>flawlesslogisticsdelivery@gmail.com</strong>
 						</span>
 					</div>
 				</div>
@@ -230,13 +250,21 @@ const Home = () => {
 					</div>
 					<div className='right_contents'>
 						<NoteAltRounded className='inq_icon' />
-						<p>Read More</p>
+						<Link to='/about'>Read More</Link>
 					</div>
 					<div className='right_contents'>
 						<MailRounded className='inq_icon' />
-						<p>Contact Us</p>
+						<Link to='/contact'>Contact Us</Link>
 					</div>
 				</div>
+			</div>
+			<div className='find-us'>
+				<h2 className='where-are-we'>WHERE ARE WE</h2>
+				<MapComponent
+					latitude='36.174465'
+					longitude=' -86.767960'
+					location='Nashville, TN, USA'
+				/>
 			</div>
 			<div className='keyFeatures_section'>
 				<div className='inquiry_left'>
@@ -279,7 +307,7 @@ const Home = () => {
 						<p className='key_right_desc3' data-aos='fade-up'>
 							when you need a fast and reliable logistics service providers we
 							are present. Flawless has been in the distribution and logistics
-							business since 2009.
+							business years.
 						</p>
 					</div>
 				</div>

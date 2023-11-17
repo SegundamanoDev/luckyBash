@@ -1,5 +1,5 @@
 .header_container {
-	background-color: black;
+	background-color: #3498db;
 	display: flex;
 	height: 96px;
 	color: white;
@@ -9,6 +9,13 @@
 	left: 0;
 	width: 100%;
 	z-index: 999;
+	transition: 0.4s;
+	opacity: 1;
+	visibility: visible;
+}
+.header_container.hideNav {
+	opacity: 0;
+	visibility: hidden;
 }
 .header_container > .header_wrapper {
 	display: flex;
@@ -19,11 +26,12 @@
 	position: relative;
 	width: 100%;
 }
+.header_wrapper > .logo {
+	width: 30%;
+}
 .header_wrapper > .logo > img {
-	height: auto;
+	max-height: 40px;
 	width: auto;
-	max-height: 72px;
-	max-width: 250px;
 }
 .header_container > .header_wrapper > nav > ul {
 	display: flex;
@@ -32,9 +40,9 @@
 }
 .header_container > .header_wrapper > nav > ul > li > a {
 	display: block;
-	font-size: 17px;
-	font-weight: 700;
-	letter-spacing: 1px;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 2px;
 	padding: 5px;
 }
 
@@ -62,7 +70,7 @@
 	left: 0;
 	height: 100vh;
 	width: 80%;
-	background-color: black;
+	background-color: #3498db;
 	transition: transform 0.3s ease;
 	transform: translateX(-100%);
 }
@@ -88,11 +96,13 @@
 	position: absolute;
 	top: 45px;
 	display: block;
-	background-color: black;
+	background-color: var(--lightblue);
 	width: 200px;
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.3s ease;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 .dropDown_contents.showContents {
 	opacity: 1;
@@ -101,8 +111,8 @@
 .dropDown_contents > a {
 	display: block;
 	padding: 8px;
-	font-size: 17px;
-	font-weight: bold;
+	font-size: 16px;
+	font-weight: 400;
 }
 .header_container > .header_wrapper > .miniNav > ul {
 	display: flex;
@@ -115,8 +125,8 @@
 }
 
 .header_container > .header_wrapper > .miniNav > ul > li > a {
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 16px;
+	font-weight: 500;
 	padding: 5px;
 }
 .sideDrop {
@@ -125,8 +135,8 @@
 	padding: 5px 10px;
 }
 .sideDrop > a {
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 16px;
+	font-weight: 500;
 	padding: 5px;
 }
 .active {
@@ -151,4 +161,14 @@
 	.header_container > .header_wrapper > .miniNav.openNav {
 		transform: translateX(0%);
 	}
+}
+.avatar-icon {
+	width: 30px !important;
+	height: 30px !important;
+}
+.admin-ava {
+	display: flex;
+	/* flex-direction: column; */
+	align-items: center;
+	justify-content: center;
 }

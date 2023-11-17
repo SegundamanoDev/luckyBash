@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useRef} from "react";
 import "./Contact.css";
+import emailjs from "@emailjs/browser";
 import {
 	EmailRounded,
 	LocationOnRounded,
@@ -7,6 +8,28 @@ import {
 } from "@mui/icons-material";
 
 const Contact = () => {
+	const form = useRef();
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+
+		emailjs
+			.sendForm(
+				"service_7roxbv5",
+				"template_fqf5dhq",
+				form.current,
+				"Awcby3YTP2EKZudJJ"
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+		e.target.reset();
+	};
 	return (
 		<div className='contact_container'>
 			<div className='contact_top' data-aos='zoom-in'>
@@ -19,46 +42,27 @@ const Contact = () => {
 					<p>To get in touch with FLAWLESS please Call or Email us</p>
 				</div>
 				<div className='right' data-aos='fade-up'>
-					<form>
-						<input type='text' name='' id='' placeholder='Enter your name' />
-						<input type='email' name='' id='' placeholder='Enter your email' />
+					<form ref={form} onSubmit={sendEmail}>
+						<input type='text' placeholder='Enter your name' name='user_name' />
+						<input
+							type='email'
+							placeholder='Enter your email'
+							name='user_email'
+						/>
 						<input
 							type='text'
-							name=''
-							id=''
 							placeholder='Whats your subject?'
+							name='subject'
 						/>
 						<textarea
-							name=''
-							id=''
 							cols='30'
 							rows='10'
+							name='message'
 							placeholder='Please enter your message'>
 							Text
 						</textarea>
 						<button type='submit'>Send</button>
 					</form>
-				</div>
-			</div>
-			<div className='contact_info'>
-				<div className='contact_info_wrapper' data-aos='fade-up'>
-					<LocationOnRounded className='icon' />
-					<h2>ADDRESS</h2>
-					<h3>42 MM Way Off Airport Road, Ikeja, Lagos, Nigeria.</h3>
-				</div>
-				<div className='contact_info_wrapper' data-aos='fade-up'>
-					<PhoneEnabled className='icon' />
-					<h2>TELEPHONE</h2>
-					<h3>+2349052890540</h3>
-					<h3>+2349052890540</h3>
-					<h3>+2349052890540</h3>
-				</div>
-				<div className='contact_info_wrapper' data-aos='fade-up'>
-					<EmailRounded className='icon' />
-					<h2>EMAIL</h2>
-					<h3>akitikorisegun2031@gmail.com</h3>
-					<h3>akitikorisegun2031@gmail.com</h3>
-					<h3>akitikorisegun2031@gmail.com</h3>
 				</div>
 			</div>
 		</div>

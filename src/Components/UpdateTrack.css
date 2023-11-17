@@ -1,4 +1,4 @@
-/* .container {
+.container {
 	min-height: 100vh;
 	width: 100%;
 	background-color: #add8e6;
@@ -6,7 +6,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 0 !important;
+	margin-top: 95px;
 	padding: 1rem;
 }
 .container > form {
@@ -34,13 +34,14 @@ form > button {
 	width: 100%;
 	gap: 15px;
 }
-.form_input_field > input,
+.form_input_field > .lab-inp-wrapper > input,
 select {
-	width: 100%;
+	display: flex;
 	padding: 1rem;
-	border: none;
+	width: 100%;
 	outline: none;
-	border-bottom: 0.5px solid lightgray;
+	font-size: 16px;
+	text-size-adjust: 100%;
 }
 @media (max-width: 900px) {
 	.container > form {
@@ -50,4 +51,4 @@ select {
 		padding: 0 !important;
 		background-color: white !important;
 	}
-} */
+}

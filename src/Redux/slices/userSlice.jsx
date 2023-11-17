@@ -1,45 +1,43 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
-import {persistStore} from "redux-persist";
+import {toast} from "react-toastify";
 
-export const signUp = createAsyncThunk(
-	"user/signup",
+const headers = {
+	headers: {
+		Authorization: `Bearer ${
+			localStorage.getItem("token") ? localStorage.getItem("token") : null
+		}`,
+		"Content-Type": "application/json",
+	},
+};
+export const SignUp = createAsyncThunk(
+	"user/registerUser",
 	async (userData, {rejectWithValue}) => {
 		try {
-			const config = {
-				headers: {
-					"Content-Type": "application/json",
-				},
-			};
 			const response = await axios.post(
-				"http://localhost:3000/signup",
+				"http://localhost:3000/register",
 				JSON.stringify(userData),
-				config
+				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response.data);
+			rejectWithValue(error.response?.data.message);
 		}
 	}
 );
 
-export const SignInUser = createAsyncThunk(
-	"user/signin",
+export const SignIn = createAsyncThunk(
+	"user/loginUser",
 	async (userData, {rejectWithValue}) => {
 		try {
-			const config = {
-				headers: {
-					"Content-Type": "application/json",
-				},
-			};
 			const response = await axios.post(
-				"http://localhost:3000/signin",
+				"http://localhost:3000/login",
 				JSON.stringify(userData),
-				config
+				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response.data);
+			rejectWithValue(error.response?.data.message);
 		}
 	}
 );
@@ -47,57 +45,58 @@ export const SignInUser = createAsyncThunk(
 const userSlice = createSlice({
 	name: "user",
 	initialState: {
-		user: null,
-		token: [],
-		isAuthenticated: false,
-		pending: false,
+		user: localStorage.getItem("user")
+			? JSON.parse(localStorage.getItem("user"))
+			: null,
+		success: false,
+		loading: false,
 		error: null,
 	},
 
 	reducers: {
 		logOut: (state) => {
-			state.isAuthenticated = false;
-			state.user = localStorage.removeItem("user");
-			persistStore(store).purge();
+			(state.user = null), (state.loading = false), (state.error = null);
+			state.success = false;
+			localStorage.removeItem("token");
+			localStorage.removeItem("user");
+			toast.success("logged out successful", {position: "top-left"});
 		},
 	},
 	extraReducers: (builder) => {
-		builder.addCase(signUp.pending, (state) => {
-			state.pending = true;
+		builder.addCase(SignUp.pending, (state) => {
+			state.loading = true;
 			state.user = null;
 			state.error = null;
-			state.isAuthenticated = false;
+			state.success = false;
 		});
-		builder.addCase(signUp.fulfilled, (state, action) => {
-			state.pending = false;
-			state.user = action.payload;
-			state.isAuthenticated = true;
-			state.error = null;
+		builder.addCase(SignUp.fulfilled, (state, action) => {
+			state.success = true;
+			(state.user = null), (state.loading = false), (state.error = null);
+			toast.success(action.payload.data.message, {position: "top-left"});
 		});
-		builder.addCase(signUp.rejected, (state, action) => {
-			state.pending = false;
-			state.user = null;
-			state.isAuthenticated = false;
+		builder.addCase(SignUp.rejected, (state, action) => {
 			state.error = action.payload;
+			(state.user = null), (state.loading = false), (state.success = false);
+			toast.error(state.error, {position: "top-left"});
 		});
 
-		builder.addCase(SignInUser.pending, (state) => {
-			state.pending = true;
-			state.user = null;
-			state.error = null;
-			state.isAuthenticated = false;
+		builder.addCase(SignIn.pending, (state) => {
+			(state.loading = true), (state.success = false);
+			(state.user = null), (state.error = null);
 		});
-		builder.addCase(SignInUser.fulfilled, (state, action) => {
-			state.pending = false;
-			state.user = action.payload.user;
-			state.isAuthenticated = true;
-			state.error = null;
+		builder.addCase(SignIn.fulfilled, (state, action) => {
+			(state.user = action.payload.user),
+				(state.success = true),
+				(state.loading = false),
+				(state.error = null);
+			localStorage.setItem("user", JSON.stringify(action.payload.user));
+			localStorage.setItem("token", action.payload.token);
+			toast.success("login success", {position: "top-left"});
 		});
-		builder.addCase(SignInUser.rejected, (state, action) => {
-			state.pending = false;
-			state.user = null;
-			state.isAuthenticated = false;
+		builder.addCase(SignIn.rejected, (state, action) => {
+			(state.user = null), (state.loading = false), (state.success = false);
 			state.error = action.payload;
+			toast.error(state.error, {position: "top-left"});
 		});
 	},
 });

@@ -1,0 +1,63 @@
+.track-order-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-top: 96px;
+	width: 100%;
+	color: var(--color);
+}
+.track-order-container > .top-side {
+	background: url("../assets/395035351_699204061893052_5821945860888742356_n.jpg");
+	height: 10rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: white;
+}
+.trackNUmber_inp_container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 1em;
+}
+.trackNUmber_inp_container > h2 > span {
+	color: var(--lightblue);
+	font-weight: bold;
+}
+.trackNUmber_inp_container > p {
+	font-weight: bold;
+}
+.trackNUmber_inp_container > form {
+	display: flex;
+	width: 100%;
+	margin-top: 10px;
+}
+.trackNUmber_inp_container > form > input {
+	display: flex;
+	width: 75%;
+	border: 0.2px solid darkgray;
+	outline: none;
+	padding: 1rem;
+	font-size: 16px;
+	text-size-adjust: 100%;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.trackNUmber_inp_container > form > button {
+	display: flex;
+	width: 25%;
+	align-items: center;
+	justify-content: center;
+	color: white !important;
+	background-color: var(--lightblue);
+	border: none;
+	outline: none;
+	border-radius: 0px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-left: 0.5px solid lightgray;
+}

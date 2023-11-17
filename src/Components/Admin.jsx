@@ -7,31 +7,38 @@ import {
 	Settings,
 	SpaceDashboardRounded,
 } from "@mui/icons-material";
-import {Link, NavLink, Outlet} from "react-router-dom";
+import {Link, NavLink, Outlet, useNavigate} from "react-router-dom";
+import {logOut} from "../Redux/slices/userSlice";
+import {useDispatch} from "react-redux";
 
 const Admin = () => {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const handleLogOut = async () => {
+		const result = await dispatch(logOut());
+		if (result) {
+			navigate("/");
+		}
+	};
 	return (
 		<div className='admin'>
 			<div className='header'>
 				<span>
-					<SpaceDashboardRounded />
+					<SpaceDashboardRounded className='dashB-icon' />
 					<NavLink to='/admin/dashboard'>Dashboard</NavLink>
 				</span>
 				<span>
-					<NoteAltRounded />
-					<NavLink to='/admin/create-tracking'>Add Tracking</NavLink>
+					<NoteAltRounded className='dashB-icon' />
+					<NavLink to='/admin/create-tracking'>Tracking</NavLink>
 				</span>
 				<span>
-					<Person />
+					<Person className='dashB-icon' />
 					<NavLink to='/admin/profile'>Account</NavLink>
 				</span>
 				<span>
-					<Settings />
-					<NavLink to='/admin/setting'>Settings</NavLink>
-				</span>
-				<span>
-					<Close />
-					<h2>Logout</h2>
+					<Close className='dashB-icon' />
+					<Link onClick={handleLogOut}>Logout</Link>
 				</span>
 			</div>
 			<div className='admin_contents'>

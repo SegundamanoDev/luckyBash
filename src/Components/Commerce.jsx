@@ -33,7 +33,6 @@ const Commerce = () => {
 
 						<div className='discssn_II'>
 							<h3 data-aos='fade-up'>Last Mile Deliveries</h3>
-							<h3 data-aos='fade-up'>Payment on Delivery</h3>
 							<h3 data-aos='fade-up'>
 								Managed (Manage) Drop-off and Collection services
 							</h3>

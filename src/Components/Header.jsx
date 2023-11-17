@@ -1,12 +1,20 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./Header.css";
-import {NavLink} from "react-router-dom";
-// import whiteLogo from "../assets/whitelogo.jpg";
+import {Link, NavLink, useNavigate} from "react-router-dom";
+import whiteLogo from "../assets/whitelogo.jpg";
+import {useDispatch, useSelector} from "react-redux";
+import {logOut} from "../Redux/slices/userSlice";
+import {Avatar} from "@mui/material";
 
 const Header = () => {
 	const [click, setClick] = useState(false);
 	const [show, setShow] = useState(false);
+	const [hideNav, setHideNav] = useState(false);
 	const [sideDropDown, setSideDropDown] = useState(false);
+
+	const {user} = useSelector((state) => state.user);
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const handleSideDrop = () => {
 		setSideDropDown(!sideDropDown);
@@ -23,15 +31,37 @@ const Header = () => {
 		setClick(!click);
 		setSideDropDown(false);
 	};
+	const handleLogOut = async () => {
+		const result = await dispatch(logOut());
+		if (result) {
+			navigate("/");
+		}
+	};
+
+	// const handleNavHide = () => {
+	// 	if (window.scrollY > 100) {
+	// 		setHideNav(true);
+	// 	} else {
+	// 		if (window.scrollY < 10) {
+	// 			setHideNav(false);
+	// 		}
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	window.addEventListener("scroll", handleNavHide);
+	// 	return () => {
+	// 		window.removeEventListener("scroll", handleNavHide);
+	// 	};
+	// }, []);
 	return (
-		<div className='header_container'>
+		<div className={hideNav ? "header_container hideNav" : "header_container"}>
 			<div className='header_wrapper'>
 				<div
 					className={click ? "overlay openOverlay" : "overlay"}
 					onClick={handleClick}></div>
 				<div className='logo'>
-					{/* <img src={whiteLogo} alt='logo' /> */}
-					<h2>FLAWLESS</h2>
+					<img src={whiteLogo} alt='logo' />
 				</div>
 				<nav>
 					<ul>
@@ -74,17 +104,24 @@ const Header = () => {
 							</div>
 						</li>
 						<li>
-							<NavLink to='/carrier'>Carrier</NavLink>
+							<NavLink to='/get-my-order'>Tracking</NavLink>
 						</li>
-						<li>
-							<NavLink to='/register'>Sign Up</NavLink>
-						</li>
-						<li>
-							<NavLink to='/login'>Sign In</NavLink>
-						</li>
-						<li>
-							<NavLink to='/admin'>Admin</NavLink>
-						</li>
+
+						{user?.role === "admin" && (
+							<li className='admin-ava'>
+								<NavLink to='/admin'>Admin</NavLink>
+							</li>
+						)}
+						{!user && (
+							<>
+								<li>
+									<NavLink to='/register'>Sign Up</NavLink>
+								</li>
+								<li>
+									<NavLink to='/login'>Sign In</NavLink>
+								</li>
+							</>
+						)}
 					</ul>
 				</nav>
 				<div className='menuButton' onClick={handleClick}>
@@ -141,25 +178,31 @@ const Header = () => {
 							)}
 						</li>
 						<li>
-							<NavLink to='/carrier' onClick={handleClick}>
-								Carrier
+							<NavLink to='/get-my-order' onClick={handleClick}>
+								Tracking
 							</NavLink>
 						</li>
-						<li>
-							<NavLink to='/register' onClick={handleClick}>
-								Sign Up
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to='/login' onClick={handleClick}>
-								Sign In
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to='/admin' onClick={handleClick}>
-								Admin
-							</NavLink>
-						</li>
+						{user?.role === "admin" && (
+							<li className='ad-ava' onClick={handleClick}>
+								<NavLink to='/admin'>Admin</NavLink>
+							</li>
+						)}
+						{user ? (
+							<>
+								<li>
+									<Link onClick={handleLogOut}>LogOut</Link>
+								</li>
+							</>
+						) : (
+							<>
+								<li onClick={handleClick}>
+									<NavLink to='/register'>Sign Up</NavLink>
+								</li>
+								<li onClick={handleClick}>
+									<NavLink to='/login'>Sign In</NavLink>
+								</li>
+							</>
+						)}
 					</ul>
 				</div>
 			</div>

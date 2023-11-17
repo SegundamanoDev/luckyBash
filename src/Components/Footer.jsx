@@ -1,14 +1,9 @@
 import React from "react";
 import "./Footer.css";
 import {Link} from "react-router-dom";
-import LogoImg from "../assets/black-logo.jpg";
+import LogoImg from "../assets/whitelogo.jpg";
 import {Call, ChevronRight, PlaceRounded} from "@mui/icons-material";
-import {
-	ChevronRightRounded,
-	FacebookRounded,
-	Instagram,
-	Twitter,
-} from "@mui/icons-material";
+import {FacebookRounded, Instagram, Twitter} from "@mui/icons-material";
 
 const Footer = () => {
 	const startYear = 2008;
@@ -30,7 +25,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className='footer_lists'>
-					<h3>OUR SERVICES</h3>
+					<p style={{fontWeight: "bold"}}>OUR SERVICES</p>
 					<span>
 						<ChevronRight />
 						<Link to=''>Cargo Transportation</Link>
@@ -51,7 +46,7 @@ const Footer = () => {
 					</span>
 				</div>
 				<div className='footer_lists'>
-					<h3>SITE PAGES</h3>
+					<p style={{fontWeight: "bold"}}>SITE PAGES</p>
 					<span>
 						<ChevronRight />
 						<Link to='/'>Home</Link>
@@ -62,11 +57,7 @@ const Footer = () => {
 					</span>
 					<span>
 						<ChevronRight />
-						<Link to='/service'>Service</Link>
-					</span>
-					<span>
-						<ChevronRight />
-						<Link to='/tracking'>Tracking</Link>
+						<Link to='/services'>Service</Link>
 					</span>
 					<span>
 						<ChevronRight />
@@ -74,20 +65,21 @@ const Footer = () => {
 					</span>
 				</div>
 				<div className='footer_lists'>
-					<h3>LOCATION</h3>
-					<span className='address_span'>
-						<PlaceRounded className='locations_icon' />
-						<div className='addrs'>
-							<p>Location:</p>
-							<p>138LOWER RD, LONDON SE16</p>
-						</div>
-					</span>
-					<div className='call_span'>
-						<h3>CALL CENTER</h3>
+					<p style={{fontWeight: "bold"}}>LOCATION</p>
+					<div className='footer_list'>
 						<span>
-							<Call className='locations_icon' />
+							<PlaceRounded className='locations_icon' />
+							<div className='addrs'>
+								<p>Address:</p>
+								<p>Nashville, TN, USA</p>
+							</div>
+						</span>
+					</div>
+					<div className='footer_list'>
+						<Call className='locations_icon' />
+						<span>
 							<div className='call_info'>
-								<p className='call_us'>Call Us:</p>
+								<p>Call Us</p>
 								<p>+44 20 8585 2096</p>
 							</div>
 						</span>

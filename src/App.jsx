@@ -12,7 +12,6 @@ import Admin from "./Components/Admin";
 import Tracking from "./Components/Tracking";
 import Account from "./Components/Account";
 import Dashboard from "./Components/Dashboard";
-import Settings from "./Components/Settings";
 import UpdateTrack from "./Components/UpdateTrack";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -25,6 +24,12 @@ import Commerce from "./Components/Commerce";
 import International from "./Components/International";
 import Specialised from "./Components/Specialised";
 import Custom from "./Components/Custom";
+import ViewOrder from "./Components/ViewOrder";
+import GetTracking from "./Components/GetTracking";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ProtectRoutes from "./Components/ProtectRoutes";
+import Notfound from "./Components/Notfound";
 
 const App = () => {
 	useEffect(() => {
@@ -38,6 +43,7 @@ const App = () => {
 	return (
 		<div className='app_container'>
 			<BrowserRouter>
+				<ToastContainer />
 				<ScrollToTop />
 				<Header />
 				<Routes>
@@ -56,14 +62,20 @@ const App = () => {
 					<Route path='/services/custom-solution' element={<Custom />} />
 					<Route path='/register' element={<Register />} />
 					<Route path='/login' element={<Login />} />
-					<Route path='/admin' element={<Admin />}>
-						<Route path='dashboard' element={<Dashboard />} />
-						<Route path='create-tracking' element={<Tracking />} />
-						<Route path='update-tracking' element={<UpdateTrack />} />
-						<Route path='profile' element={<Account />} />
-						<Route path='setting' element={<Settings />} />
+
+					<Route element={<ProtectRoutes />}>
+						<Route path='/admin' element={<Admin />}>
+							<Route index element={<Dashboard />} />
+							<Route path='dashboard' element={<Dashboard />} />
+							<Route path='create-tracking' element={<Tracking />} />
+							<Route path='profile' element={<Account />} />
+						</Route>
 					</Route>
 					<Route path='/reset-password' element={<ResetPass />} />
+					<Route path='/order/:id' element={<ViewOrder />} />
+					<Route path='/get-my-order' element={<GetTracking />} />
+					<Route path='/update-order/:id' element={<UpdateTrack />} />
+					<Route path='*' element={<Notfound />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>

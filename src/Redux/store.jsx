@@ -1,25 +1,12 @@
-// src/redux/store.js
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import userReducer from "./slices/userSlice";
-import storage from "redux-persist/lib/storage";
-import {persistReducer, persistStore} from "redux-persist";
+import {configureStore} from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-
-const persistConfig = {
-	key: "root",
-	storage,
-};
-
-const rootReducer = combineReducers({
-	user: userReducer,
-	// order: orderReducer,
-});
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+import orderSlice from "./slices/orderSlice";
+import userSlice from "./slices/userSlice";
 
 export const store = configureStore({
-	reducer: persistedReducer,
+	reducer: {
+		user: userSlice,
+		order: orderSlice,
+	},
 	middleware: [thunk],
 });
-
-export const persistor = persistStore(store);

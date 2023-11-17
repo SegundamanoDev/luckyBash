@@ -1,31 +1,40 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useState} from "react";
 import "./Register.css";
 import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
-import {signUp} from "../Redux/slices/userSlice";
+import {Link, useNavigate} from "react-router-dom";
+import {SignUp} from "../Redux/slices/userSlice";
+import {toast} from "react-toastify";
 
 const Register = () => {
 	const dispatch = useDispatch();
-
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
+	const {user, loading, error, success} = useSelector((state) => state.user);
+	const navigate = useNavigate();
+	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [photo, setPhoto] = useState("");
+	const [image, setImage] = useState("");
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		dispatch(
-			signUp({
-				firstName,
-				lastName,
+			SignUp({
+				username,
 				email,
 				password,
-				image: photo,
+				photo: image,
 			})
 		);
 	};
+
+	if (success) {
+		navigate("/login");
+	}
+	useEffect(() => {
+		if (user?._id) {
+			navigate("/");
+		}
+	}, [navigate, user]);
 
 	const handleFileChange = (e) => {
 		const file = e.target.files[0];
@@ -39,7 +48,7 @@ const Register = () => {
 		reader.readAsDataURL(file);
 		reader.onload = (e) => {
 			const base64String = e.target.result;
-			setPhoto(base64String);
+			setImage(base64String);
 		};
 	};
 	return (
@@ -49,32 +58,18 @@ const Register = () => {
 				<div className='form_input_field'>
 					<input
 						type='text'
-						name='firstName'
-						id='firstName'
-						placeholder='Firstname'
-						value={firstName}
-						onChange={(e) => setFirstName(e.target.value)}
+						placeholder='Username'
+						value={username}
+						onChange={(e) => setUsername(e.target.value)}
 					/>
 					<input
 						type='text'
-						name='lastName'
-						id='lastName'
-						placeholder='LastName'
-						value={lastName}
-						onChange={(e) => setLastName(e.target.value)}
-					/>
-					<input
-						type='text'
-						name='Email'
-						id='Email'
 						placeholder='Email'
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 					<input
 						type='text'
-						name='password'
-						id='password'
 						placeholder='Password'
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
@@ -82,9 +77,7 @@ const Register = () => {
 					<input
 						type='file'
 						accept='image/*'
-						name='photo'
-						id='photo'
-						placeholder='Photo'
+						placeholder='image'
 						onChange={handleFileChange}
 					/>
 				</div>
@@ -94,9 +87,13 @@ const Register = () => {
 						<Link to='/login'>Login</Link>
 					</span>
 				</p>
-				<button type='submit'>Register</button>
+				<button type='submit'>
+					{loading ? <p>SENDING...</p> : "Register"}
+				</button>
 				<p>Or</p>
 				<button>Sign Up with Google</button>
+
+				{error && <p style={{color: "red"}}>{error}</p>}
 			</form>
 		</div>
 	);

@@ -1,6 +1,45 @@
-.dashboard {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.dashboard_container {
 	width: 100%;
+	min-height: 100vh;
+	overflow-x: scroll;
+	text-align: center;
+}
+.dashboard_container > table {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+table > th,
+tr,
+td {
+	padding: 15px;
+	border-bottom: 1px solid black;
+}
+.orderImg {
+	width: 100px;
+	height: 80px;
+}
+.view_btn {
+	background-color: blue;
+	display: block;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.update_btn {
+	background-color: green;
+	display: block;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.delete_btn {
+	background-color: red;
+	display: block;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
 }
