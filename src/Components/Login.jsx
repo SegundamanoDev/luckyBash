@@ -70,7 +70,7 @@ const Login = () => {
 				<button type='submit'>{loading ? <p>SENDING...</p> : "Login"}</button>
 				<button onClick={signInWithGoogle}>Sign In with Google</button>
 
-				{error && <p style={{color: "red"}}>{error}</p>}
+				{error && <p style={{color: "red"}}>Error: {error}</p>}
 			</form>
 		</div>
 	);

@@ -9,14 +9,30 @@ const About = () => {
 				<h2>ABOUT US</h2>
 			</div>
 			<section>
-				<h2 data-aos='fade-up'>
-					Qualified service and committed employees. <br /> How do we do it?
-				</h2>
-				<h3 data-aos='fade-up'>
-					FLAWLESS is a provider of end-to-end logistics solutions to businesses
-					and institutions Across the Globe. We are currently among one of the
-					best logistics provider, operating from over 50 Countries
-				</h3>
+				<p>
+					Welcome to Flawless Logistics's About Us page, where our journey
+					unfolds beyond the parcels we deliver. Established with a commitment
+					to redefine courier services, we take pride in being more than just a
+					logistical solution. At Flawless Logistics, we understand that behind
+					every package is a story – a connection waiting to be strengthened.
+					Our foundation rests on reliability, integrity, and a passion for
+					seamless deliveries. With years of experience, we've cultivated a
+					culture that values precision in every shipment and places customer
+					satisfaction at its core. Our dedicated team, comprised of industry
+					experts, ensures that your parcels are handled with the utmost care
+					and efficiency. Beyond the numbers, we are driven by the relationships
+					we build. It's not just about delivering packages; it's about
+					delivering promises. We embrace innovation to stay ahead in an
+					ever-evolving industry, utilizing cutting-edge technology to provide
+					real-time tracking, streamlined processes, and a level of transparency
+					that instills confidence in our clientele. Flawless Logistics is more
+					than a courier service – it's a commitment to excellence. As we
+					continue to grow, our focus remains on creating a seamless experience
+					for our customers, fostering trust, and making every delivery more
+					than just a transaction. Thank you for choosing Flawless Logistics –
+					where every parcel carries our dedication, and every delivery is a
+					testament to our unwavering commitment to your satisfaction.
+				</p>
 				<div className='cards'>
 					<ul>
 						<li data-aos='fade-up'>
@@ -49,39 +65,6 @@ const About = () => {
 					</ul>
 				</div>
 			</section>
-			<div className='team'>
-				<h2 data-aos='fade-up'>FLAWLESS TEAM</h2>
-				<h3 data-aos='fade-up'>Meet the FLAWLESS team</h3>
-				<div className='team_info'>
-					<ul>
-						<li data-aos='fade-up'>
-							{/* <img src={segunII} alt={segunII} /> */}
-							<div className='desc'>
-								<p>MANAGING DIRECTOR</p>
-								<h3>AKITIKORI SEGUN</h3>
-								<button>CONTACT</button>
-							</div>
-						</li>
-
-						<li data-aos='fade-up'>
-							{/* <img src={austin} alt={austin} /> */}
-							<div className='desc'>
-								<p>MANAGING DIRECTOR</p>
-								<h3>AKITIKORI SEGUN</h3>
-								<button>CONTACT</button>
-							</div>
-						</li>
-						<li data-aos='fade-up'>
-							{/* <img src={bola} alt={bola} /> */}
-							<div className='desc'>
-								<p>MANAGING DIRECTOR</p>
-								<h3>AKITIKORI SEGUN</h3>
-								<button>CONTACT</button>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
 		</div>
 	);
 };

@@ -28,21 +28,21 @@ const Footer = () => {
 					<p style={{fontWeight: "bold"}}>OUR SERVICES</p>
 					<span>
 						<ChevronRight />
-						<Link to=''>Cargo Transportation</Link>
+						<Link to='/road'>Cargo Transportation</Link>
 					</span>
 					<span>
 						<ChevronRight />
-						<Link to=''>Air Freight</Link>
-					</span>
-					<span>
-						<ChevronRight />
-
-						<Link to=''>Ocean Freight</Link>
+						<Link to='/air'>Air Freight</Link>
 					</span>
 					<span>
 						<ChevronRight />
 
-						<Link to=''>Packaging & Storage</Link>
+						<Link to='/ocean'>Ocean Freight</Link>
+					</span>
+					<span>
+						<ChevronRight />
+
+						<Link to='/about'>Packaging & Storage</Link>
 					</span>
 				</div>
 				<div className='footer_lists'>

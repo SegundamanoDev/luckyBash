@@ -12,22 +12,27 @@ const Courier = () => {
 			</div>
 			<div className='left_wrapper'>
 				<div className='left_top'>
-					<div className='group_item' data-aos='fade-up'>
-						<h2>Courier Service</h2>
-						<h2>Integrated transport solutions.</h2>
-					</div>
-
-					<h3 data-aos='fade-up'>
-						Trust Our Tires everything runs like clockwork. your business run
-						smoothly when your logistics runs smoothly
-					</h3>
-
 					<div className='discssn' data-aos='fade-up'>
-						<h2>Same Day Delivery:</h2>
 						<p>
-							For our same-day service, Shipment received before 10:00am and
-							guarantee to be delivered to selected airport cities across
-							Nigeria before close of business on the same day.
+							Welcome to Flawless Delivery, where reliability meets efficiency,
+							and your packages find their express journey to their destination.
+							As a leading courier service, we take pride in delivering not just
+							parcels but peace of mind. At Flawless Delivery, we've mastered
+							the art of seamless logistics. Whether it's a time-sensitive
+							document or a special delivery, our dedicated team ensures your
+							packages are handled with utmost care from pick-up to drop-off.
+							Our commitment goes beyond just delivering packages; it's about
+							delivering trust. With cutting-edge technology, real-time
+							tracking, and a network that spans far and wide, we bring you a
+							courier experience that's as dependable as it is efficient.
+							Explore our range of services tailored to meet your shipping
+							needs. From local deliveries to international shipments, we've got
+							the solution to ensure your packages reach their destination on
+							time and in perfect condition. Choose Flawless Delivery for a
+							courier service that understands the value of your shipments.
+							We're not just in the business of logistics; we're in the business
+							of building lasting connections. Experience the difference with
+							Flawless Delivery – where every delivery is a promise kept.
 						</p>
 					</div>
 

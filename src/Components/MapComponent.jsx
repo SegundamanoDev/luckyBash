@@ -8,7 +8,7 @@ const MapComponent = ({latitude, longitude, location}) => {
 		<MapContainer
 			center={locationCoordinate}
 			zoom={13}
-			style={{width: "100%", height: "500px"}}>
+			style={{width: "100%", height: "300px"}}>
 			<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 			<Marker position={locationCoordinate}>
 				<Popup>{location}</Popup>

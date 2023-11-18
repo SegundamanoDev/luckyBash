@@ -68,10 +68,14 @@ const Home = () => {
 	return (
 		<div className='home_container'>
 			<div className='banner'>
-				<div className='banner_contents' data-aos='zoom-in'>
-					<h2>
-						WELCOME TO <br /> FLAWLESS LOGISTICS <br /> EXPECT THE BEST FROM US
-					</h2>
+				<div className='banner-content' data-aos='zoom-in'>
+					<h1 className='banner-title'>WELCOME TO FLAWLESS LOGISTICS</h1>
+					<p className='banner-description'>
+						Where Precision Meets Reliability. Experience Seamless Freight
+						Solutions Tailored to Your Business Needs. Your Trusted Partner in
+						Efficient Global Transportation.
+					</p>
+
 					<div className='buttons'>
 						<Link className='banner_signup' to='/register'>
 							Register
@@ -89,7 +93,14 @@ const Home = () => {
 							<LocalShippingRounded className='banner_icons' />
 							<p>Road Freight</p>
 						</span>
-						<p>Secure and timely road Cargo Handling</p>
+						<p>
+							Explore the versatility of our road freight solutions as we
+							navigate the highways to deliver excellence to your doorstep.
+							Whether your cargo needs a regional or international route...
+						</p>
+						<Link to='/road' className='freight-link'>
+							Read More
+						</Link>
 					</div>
 					<div className='banner_shipping_mode' data-aos='fade-up'>
 						<span>
@@ -97,7 +108,14 @@ const Home = () => {
 							<FlightTakeoff className='banner_icons' />
 							<p>Air Freight</p>
 						</span>
-						<p>Secure and timely Air Cargo Handling</p>
+						<p>
+							Embark on a journey of unparalleled speed and efficiency with our
+							air freight services. Perfect for urgent shipments, air freight
+							takes your cargo to new heights...
+						</p>
+						<Link to='/air' className='freight-link'>
+							Read More
+						</Link>
 					</div>
 					<div className='banner_shipping_mode' data-aos='fade-up'>
 						<span>
@@ -105,7 +123,16 @@ const Home = () => {
 							<DirectionsBoatRounded className='banner_icons' />
 							<p>Ocean Freight</p>
 						</span>
-						<p>Efficient Ocean Freight Logistics Provider</p>
+						<p>
+							{" "}
+							Set sail with confidence as our ocean freight services offer a
+							robust solution for transporting large volumes of cargo across
+							vast distances. Embrace the stability and affordability of ocean
+							freight, ideal for international shipping needs...
+						</p>
+						<Link to='/ocean' className='freight-link'>
+							Read More
+						</Link>
 					</div>
 				</div>
 			</div>

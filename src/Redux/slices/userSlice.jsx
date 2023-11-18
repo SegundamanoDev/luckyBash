@@ -37,7 +37,8 @@ export const SignIn = createAsyncThunk(
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			console.log(error);
+			rejectWithValue(error.message);
 		}
 	}
 );

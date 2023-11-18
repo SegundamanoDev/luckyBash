@@ -30,6 +30,9 @@ import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProtectRoutes from "./Components/ProtectRoutes";
 import Notfound from "./Components/Notfound";
+import Air from "./Components/Air";
+import Road from "./Components/Road";
+import Ocean from "./Components/Ocean";
 
 const App = () => {
 	useEffect(() => {
@@ -75,6 +78,9 @@ const App = () => {
 					<Route path='/order/:id' element={<ViewOrder />} />
 					<Route path='/get-my-order' element={<GetTracking />} />
 					<Route path='/update-order/:id' element={<UpdateTrack />} />
+					<Route path='/air' element={<Air />} />
+					<Route path='/road' element={<Road />} />
+					<Route path='/ocean' element={<Ocean />} />
 					<Route path='*' element={<Notfound />} />
 				</Routes>
 				<Footer />

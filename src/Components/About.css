@@ -40,7 +40,8 @@ section > h2 + h3 {
 	flex-direction: column;
 	gap: 0.7rem;
 	align-items: center;
-	box-shadow: 0px 0px 3px 0px;
+	background-color: white;
+	border-radius: 10px;
 }
 .about_container > section > .cards > ul > li > .icon {
 	color: var(--lightblue);

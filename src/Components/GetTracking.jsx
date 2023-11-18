@@ -37,9 +37,9 @@ const GetTracking = () => {
 			</div>
 			<hr />
 
-			{loading && <h2>Loading. . .</h2>}
+			{loading && <p>Loading. . .</p>}
 			{error && <p>{error}</p>}
-			{order._id && (
+			{order && (
 				<>
 					<div className='view-top'>
 						<div className='dates-time'>
@@ -96,7 +96,7 @@ const GetTracking = () => {
 						</div>
 					</div>
 					<div className='big-border-middle'>
-						<h3>SHIPMENT STATUS - {order?.status}</h3>
+						<p>SHIPMENT STATUS - {order?.status}</p>
 					</div>
 
 					<div className='shipment-information'>
