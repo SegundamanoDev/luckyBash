@@ -2,9 +2,16 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	margin-top: 96px;
+	margin-top: 95px;
 	width: 100%;
+	background-color: var(--background);
 	color: var(--color);
+}
+.ref-numb-icon {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 .track-order-container > .top-side {
 	background: url("../assets/395035351_699204061893052_5821945860888742356_n.jpg");
@@ -60,4 +67,99 @@
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	border-left: 0.5px solid lightgray;
+}
+
+.cont-img {
+	height: 500px;
+	width: auto;
+	object-fit: cover;
+}
+
+.view_orderCont > .view-top {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.date-fmt {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.date-active-dot {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+}
+.date-active-dot > .active {
+	all: unset;
+	background-color: green;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+}
+.view-top > .dates-time {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	width: 100%;
+	justify-content: space-around;
+	gap: 15px;
+	padding: 1rem;
+}
+.currnt-note {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10px;
+	text-align: center;
+}
+.send-receiver-info {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	width: 100%;
+	gap: 1rem;
+	text-align: center;
+	padding: 10px;
+}
+.send-receiver-info > .infos {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.infos > .info {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 10px;
+}
+.big-border-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: var(--lightblue);
+	color: white;
+	padding: 10px;
+}
+.shipment-information {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 10px;
+}
+.shipmnt-lists {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	width: 100%;
+	gap: 1rem;
+}
+.shipmnt-lists > .list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px;
 }

@@ -16,13 +16,13 @@ export const CreateOrder = createAsyncThunk(
 	async (orderData, {rejectWithValue}) => {
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/create-order",
+				"http://shiny-habitual-pony.glitch.me/create-order",
 				JSON.stringify(orderData),
 				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			return rejectWithValue(error.response?.data.message);
 		}
 	}
 );
@@ -32,13 +32,13 @@ export const GetOrders = createAsyncThunk(
 	async (orderData, {rejectWithValue}) => {
 		try {
 			const response = await axios.get(
-				"http://localhost:3000/orders",
+				"http://shiny-habitual-pony.glitch.me/orders",
 				JSON.stringify(orderData),
 				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			return rejectWithValue(error.response?.data.message);
 		}
 	}
 );
@@ -48,12 +48,12 @@ export const GetOrder = createAsyncThunk(
 	async (id, {rejectWithValue}) => {
 		try {
 			const response = await axios.get(
-				`http://localhost:3000/order/${id}`,
+				`http://shiny-habitual-pony.glitch.me/order/${id}`,
 				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			return rejectWithValue(error.response?.data.message);
 		}
 	}
 );
@@ -63,13 +63,13 @@ export const UpdateOrder = createAsyncThunk(
 	async (formData, {rejectWithValue}) => {
 		try {
 			const response = await axios.put(
-				`http://localhost:3000/update-order/${formData.id}`,
+				`http://shiny-habitual-pony.glitch.me/update-order/${formData.id}`,
 				JSON.stringify(formData.body),
 				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			return rejectWithValue(error.response?.data.message);
 		}
 	}
 );
@@ -78,12 +78,12 @@ export const FindOrder = createAsyncThunk(
 	async (refNumber, {rejectWithValue}) => {
 		try {
 			const response = await axios.get(
-				`http://localhost:3000/track-order/${refNumber}`,
+				`http://shiny-habitual-pony.glitch.me/track-order/${refNumber}`,
 				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			return rejectWithValue(error.response.data.message);
 		}
 	}
 );
@@ -92,12 +92,12 @@ export const DeleteOrder = createAsyncThunk(
 	async (id, {rejectWithValue}) => {
 		try {
 			const response = await axios.delete(
-				`http://localhost:3000/delete-order/${id}`,
+				`http://shiny-habitual-pony.glitch.me/delete-order/${id}`,
 				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			return rejectWithValue(error.response?.data.message);
 		}
 	}
 );
@@ -223,7 +223,7 @@ const orderSlice = createSlice({
 			state.orders = [];
 			state.order = {};
 			state.error = action.payload;
-			toast.error(state.error, {position: "top-left"});
+			toast.error(action.payload, {position: "top-left"});
 		});
 		builder.addCase(DeleteOrder.pending, (state) => {
 			state.pending = true;

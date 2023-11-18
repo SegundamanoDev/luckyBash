@@ -15,13 +15,13 @@ export const SignUp = createAsyncThunk(
 	async (userData, {rejectWithValue}) => {
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/register",
+				"http://shiny-habitual-pony.glitch.me/register",
 				JSON.stringify(userData),
 				headers
 			);
 			return response.data;
 		} catch (error) {
-			rejectWithValue(error.response?.data.message);
+			return rejectWithValue(error.response.data);
 		}
 	}
 );
@@ -31,14 +31,14 @@ export const SignIn = createAsyncThunk(
 	async (userData, {rejectWithValue}) => {
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/login",
+				"http://shiny-habitual-pony.glitch.me/login",
 				JSON.stringify(userData),
 				headers
 			);
 			return response.data;
 		} catch (error) {
 			console.log(error);
-			rejectWithValue(error.message);
+			return rejectWithValue(error.response.data.message);
 		}
 	}
 );
@@ -86,18 +86,18 @@ const userSlice = createSlice({
 			(state.user = null), (state.error = null);
 		});
 		builder.addCase(SignIn.fulfilled, (state, action) => {
-			(state.user = action.payload.user),
+			(state.user = action.payload?.user),
 				(state.success = true),
 				(state.loading = false),
 				(state.error = null);
-			localStorage.setItem("user", JSON.stringify(action.payload.user));
-			localStorage.setItem("token", action.payload.token);
+			localStorage.setItem("user", JSON.stringify(action.payload?.user));
+			localStorage.setItem("token", action.payload?.token);
 			toast.success("login success", {position: "top-left"});
 		});
 		builder.addCase(SignIn.rejected, (state, action) => {
 			(state.user = null), (state.loading = false), (state.success = false);
 			state.error = action.payload;
-			toast.error(state.error, {position: "top-left"});
+			toast.error(action.payload, {position: "top-left"});
 		});
 	},
 });

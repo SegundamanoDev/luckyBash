@@ -29,12 +29,8 @@ const ViewOrder = () => {
 								</p>
 								<div className='active'></div>
 							</div>
-							<p>
-								{" "}
-								<strong>{order?.updatedTime}</strong>
-							</p>
 						</div>
-						<div className='ref-icon-numb'>
+						<div className='currnt-note'>
 							<p>
 								Your package is currently at{" "}
 								<strong>{order?.currentLocation}</strong>
@@ -48,15 +44,15 @@ const ViewOrder = () => {
 						<img
 							src={refImg}
 							alt='refImg'
-							style={{width: "200px", height: "200px"}}
+							style={{width: "100px", height: "100px"}}
 						/>
-						<h2>Tracking Number: {order?.refNumber}</h2>
+						<p>Tracking Number: {order?.refNumber}</p>
 					</div>
 				</div>
 
 				<div className='send-receiver-info'>
 					<div className='infos'>
-						<h2>Shipper Information</h2>
+						<p>Shipper Information</p>
 						<div className='info'>
 							<p>Name: {order?.senderName}</p>
 							<p>Address: {order?.senderAddress}</p>
@@ -65,7 +61,7 @@ const ViewOrder = () => {
 						</div>
 					</div>
 					<div className='infos'>
-						<h2>Receiver Information</h2>
+						<p>Receiver Information</p>
 						<div className='info'>
 							<p>Name: {order?.receiverName}</p>
 							<p>Address: {order?.receiverAddress}</p>
@@ -75,11 +71,11 @@ const ViewOrder = () => {
 					</div>
 				</div>
 				<div className='big-border-middle'>
-					<h3>SHIPMENT STATUS - {order?.status}</h3>
+					<p>SHIPMENT STATUS - {order?.status}</p>
 				</div>
 
 				<div className='shipment-information'>
-					<h2>Shipment Information</h2>
+					<p>Shipment Information</p>
 					<div className='shipmnt-lists'>
 						<div className='list'>
 							<span>
