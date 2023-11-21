@@ -2,21 +2,20 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 import {toast} from "react-toastify";
 
-const headers = {
-	headers: {
-		Authorization: `Bearer ${
-			localStorage.getItem("token") ? localStorage.getItem("token") : null
-		}`,
-		"Content-Type": "application/json",
-	},
-};
-
 export const CreateOrder = createAsyncThunk(
 	"order/create",
 	async (orderData, {rejectWithValue}) => {
 		try {
+			const headers = {
+				headers: {
+					Authorization: `Bearer ${
+						localStorage.getItem("token") ? localStorage.getItem("token") : null
+					}`,
+					"Content-Type": "application/json",
+				},
+			};
 			const response = await axios.post(
-				"http://shiny-habitual-pony.glitch.me/create-order",
+				"http://localhost:3000/create-order",
 				JSON.stringify(orderData),
 				headers
 			);
@@ -28,14 +27,18 @@ export const CreateOrder = createAsyncThunk(
 );
 
 export const GetOrders = createAsyncThunk(
-	"order/get",
-	async (orderData, {rejectWithValue}) => {
+	"order/getOrders",
+	async (_, {rejectWithValue}) => {
 		try {
-			const response = await axios.get(
-				"http://shiny-habitual-pony.glitch.me/orders",
-				JSON.stringify(orderData),
-				headers
-			);
+			const headers = {
+				headers: {
+					Authorization: `Bearer ${
+						localStorage.getItem("token") ? localStorage.getItem("token") : null
+					}`,
+					"Content-Type": "application/json",
+				},
+			};
+			const response = await axios.get(`http://localhost:3000/orders`, headers);
 			return response.data;
 		} catch (error) {
 			return rejectWithValue(error.response?.data.message);
@@ -47,8 +50,16 @@ export const GetOrder = createAsyncThunk(
 	"order/singleOrder",
 	async (id, {rejectWithValue}) => {
 		try {
+			const headers = {
+				headers: {
+					Authorization: `Bearer ${
+						localStorage.getItem("token") ? localStorage.getItem("token") : null
+					}`,
+					"Content-Type": "application/json",
+				},
+			};
 			const response = await axios.get(
-				`http://shiny-habitual-pony.glitch.me/order/${id}`,
+				`http://localhost:3000/order/${id}`,
 				headers
 			);
 			return response.data;
@@ -62,8 +73,16 @@ export const UpdateOrder = createAsyncThunk(
 	"order/updateOrder",
 	async (formData, {rejectWithValue}) => {
 		try {
+			const headers = {
+				headers: {
+					Authorization: `Bearer ${
+						localStorage.getItem("token") ? localStorage.getItem("token") : null
+					}`,
+					"Content-Type": "application/json",
+				},
+			};
 			const response = await axios.put(
-				`http://shiny-habitual-pony.glitch.me/update-order/${formData.id}`,
+				`http://localhost:3000/update-order/${formData.id}`,
 				JSON.stringify(formData.body),
 				headers
 			);
@@ -77,8 +96,16 @@ export const FindOrder = createAsyncThunk(
 	"order/findTracking",
 	async (refNumber, {rejectWithValue}) => {
 		try {
+			const headers = {
+				headers: {
+					Authorization: `Bearer ${
+						localStorage.getItem("token") ? localStorage.getItem("token") : null
+					}`,
+					"Content-Type": "application/json",
+				},
+			};
 			const response = await axios.get(
-				`http://shiny-habitual-pony.glitch.me/track-order/${refNumber}`,
+				`http://localhost:3000/track-order/${refNumber}`,
 				headers
 			);
 			return response.data;
@@ -91,8 +118,16 @@ export const DeleteOrder = createAsyncThunk(
 	"order/deleteTracking",
 	async (id, {rejectWithValue}) => {
 		try {
+			const headers = {
+				headers: {
+					Authorization: `Bearer ${
+						localStorage.getItem("token") ? localStorage.getItem("token") : null
+					}`,
+					"Content-Type": "application/json",
+				},
+			};
 			const response = await axios.delete(
-				`http://shiny-habitual-pony.glitch.me/delete-order/${id}`,
+				`http://localhost:3000/delete-order/${id}`,
 				headers
 			);
 			return response.data;
@@ -143,7 +178,7 @@ const orderSlice = createSlice({
 			state.error = null;
 		});
 		builder.addCase(GetOrders.fulfilled, (state, action) => {
-			state.pending = true;
+			state.pending = false;
 			state.success = true;
 			state.orders = action.payload;
 			state.order = {};

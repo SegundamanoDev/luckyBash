@@ -85,7 +85,6 @@ const Home = () => {
 						</Link>
 					</div>
 				</div>
-
 				<div className='banner_shipment_mode_container'>
 					<div className='banner_shipping_mode' data-aos='fade-up'>
 						<span>

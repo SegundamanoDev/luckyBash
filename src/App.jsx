@@ -33,6 +33,7 @@ import Notfound from "./Components/Notfound";
 import Air from "./Components/Air";
 import Road from "./Components/Road";
 import Ocean from "./Components/Ocean";
+import Modal from "./Components/Modal";
 
 const App = () => {
 	useEffect(() => {
@@ -81,6 +82,7 @@ const App = () => {
 					<Route path='/air' element={<Air />} />
 					<Route path='/road' element={<Road />} />
 					<Route path='/ocean' element={<Ocean />} />
+					<Route path='/modal' element={<Modal />} />
 					<Route path='*' element={<Notfound />} />
 				</Routes>
 				<Footer />

@@ -1,19 +1,29 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "./Dashboard.css";
 import {useDispatch, useSelector} from "react-redux";
-import {DeleteOrder, GetOrder, GetOrders} from "../Redux/slices/orderSlice";
-import {Link, useNavigate} from "react-router-dom";
+import {DeleteOrder, GetOrders} from "../Redux/slices/orderSlice";
+import {Link} from "react-router-dom";
+import Modal from "./Modal";
 
 const Dashboard = () => {
+	const [modalState, setModalState] = useState(false);
 	const {orders, loading, error} = useSelector((state) => state.order);
 	const dispatch = useDispatch();
+	console.log(orders);
 
+	const triggerModalOpen = () => {
+		setModalState(true);
+	};
+	const closeModal = () => {
+		setModalState(false);
+	};
 	useEffect(() => {
 		dispatch(GetOrders());
 	}, [dispatch]);
 
 	const handleDelete = async (id) => {
 		const result = await dispatch(DeleteOrder(id));
+		setModalState(false);
 		if (result) {
 			location.reload();
 		}
@@ -66,11 +76,14 @@ const Dashboard = () => {
 										</Link>
 									</td>
 									<td>
-										<Link
-											onClick={() => handleDelete(item._id)}
-											className='delete_btn'>
+										<Link onClick={triggerModalOpen} className='delete_btn'>
 											delete
 										</Link>
+										<Modal
+											isOpen={modalState}
+											onClose={closeModal}
+											onConfirm={() => handleDelete(item._id)}
+										/>
 									</td>
 								</tr>
 							))}

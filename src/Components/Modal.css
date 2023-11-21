@@ -1,0 +1,68 @@
+.modal-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	color: var(--color);
+}
+.modal-contents {
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+	width: 60%;
+}
+.modal-warning {
+	background-color: var(--background);
+	padding: 7px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	font-weight: bold;
+}
+.caution-btn-wrapper {
+	padding: 7px;
+	background-color: white;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.modal-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 10px;
+}
+.modal-buttons > button {
+	/* all: unset; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	width: 100%;
+	width: fit-content;
+}
+.modal-buttons > button > span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+.modal-iconI {
+	color: red;
+	width: 18px !important;
+	height: 18px !important;
+}
+.modal-iconII {
+	color: green;
+	width: 18px !important;
+	height: 18px !important;
+}
+.modal-buttons > button > span {
+	padding: 5px;
+}
